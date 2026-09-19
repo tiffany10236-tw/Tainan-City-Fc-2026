@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tainan City FC｜印尼出賽資訊網</title>
+<meta name="theme-color" content="#0b0b0d">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-32.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="brand-header">
+  <div class="badge">2026/27 AFC CHALLENGE LEAGUE ｜ GROUP D</div>
+  <h1>台南 TAINAN CITY FC</h1>
+  <div class="sub">印尼．沙馬林達出賽資訊</div>
+</div>
+
+<div class="container">
+
+  <div class="nav-grid">
+    <a class="nav-card" href="tickets.html">
+      <div class="icon">🎫</div>
+      <div>
+        <div class="label">電子機票查詢</div>
+        <div class="desc">從名單點選查看個人機票</div>
+      </div>
+    </a>
+
+    <a class="nav-card" href="itinerary.html">
+      <div class="icon">✈️</div>
+      <div>
+        <div class="label">飛航行程與賽程</div>
+        <div class="desc">航班時間、行李與電池規定、比賽場次</div>
+      </div>
+    </a>
+
+    <a class="nav-card" href="notices.html">
+      <div class="icon">🧳</div>
+      <div>
+        <div class="label">出國注意事項</div>
+        <div class="desc">當地天氣、電壓插座提醒</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer-note">
+    Peggy整理｜2026-09-19
+  </div>
+</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>

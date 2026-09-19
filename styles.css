@@ -1,0 +1,241 @@
+:root {
+  --bg: #0b0b0d;
+  --bg-panel: #161618;
+  --bg-panel-2: #1f1f22;
+  --maroon: #7a1f2b;
+  --maroon-bright: #a72638;
+  --gold: #d4a72c;
+  --text: #f4f1ea;
+  --text-dim: #c9c5bc;
+  --line: #333336;
+  --success: #3f8f5f;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--gold); }
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 18px 60px;
+}
+
+/* ---------- Header / Brand ---------- */
+.brand-header {
+  text-align: center;
+  padding: 28px 16px 22px;
+  background: linear-gradient(180deg, var(--maroon) 0%, #4a1219 100%);
+  border-bottom: 4px solid var(--gold);
+}
+.brand-header .badge {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.brand-header h1 {
+  font-size: 26px;
+  margin: 4px 0 6px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.brand-header .sub {
+  font-size: 15px;
+  color: var(--text-dim);
+}
+
+/* ---------- Nav cards ---------- */
+.nav-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 22px;
+}
+.nav-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--gold);
+  border-radius: 10px;
+  padding: 18px 16px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.15s ease;
+}
+.nav-card:active { background: var(--bg-panel-2); }
+.nav-card .icon { font-size: 30px; flex-shrink: 0; }
+.nav-card .label { font-size: 19px; font-weight: 700; }
+.nav-card .desc { font-size: 14px; color: var(--text-dim); margin-top: 2px; }
+
+/* ---------- Section titles ---------- */
+.page-title {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 4px 0 4px;
+  color: var(--gold);
+}
+.page-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 18px; }
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 15px;
+}
+.back-link:before { content: "← "; }
+
+/* ---------- Roster list ---------- */
+.search-box {
+  width: 100%;
+  padding: 14px 14px;
+  font-size: 17px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.search-box::placeholder { color: #8a8a8e; }
+
+.roster-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.roster-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+.roster-item:active { background: var(--bg-panel-2); }
+.roster-item .name { font-size: 18px; font-weight: 700; }
+.roster-item .role { font-size: 13px; color: var(--gold); margin-bottom: 2px; }
+.roster-item .arrow { color: var(--text-dim); font-size: 20px; }
+.roster-item.missing { opacity: 0.55; }
+.roster-item.missing .arrow { color: #8a8a8e; }
+
+/* ---------- Ticket viewer ---------- */
+.ticket-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 18px;
+  text-align: center;
+  margin-top: 6px;
+}
+.ticket-panel .name { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
+.ticket-panel .role { color: var(--gold); font-size: 14px; margin-bottom: 18px; }
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 16px 14px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.btn-primary { background: var(--gold); color: #241a05; }
+.btn-secondary { background: var(--bg-panel-2); color: var(--text); border: 1px solid var(--line); }
+.no-ticket-note {
+  background: #3a2a10;
+  border: 1px solid #6b4c17;
+  color: #f0d79a;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 15px;
+}
+
+/* ---------- Tables ---------- */
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 16px;
+  margin-bottom: 18px;
+}
+.card h2 {
+  font-size: 18px;
+  color: var(--gold);
+  margin: 0 0 10px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+}
+.flight-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 15px;
+}
+.flight-row:last-child { border-bottom: none; }
+.flight-row .flabel { color: var(--text-dim); flex-shrink: 0; width: 92px; }
+.flight-row .fval { text-align: right; flex: 1; }
+
+table.simple {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+table.simple th, table.simple td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 6px;
+  text-align: left;
+}
+table.simple th {
+  color: var(--gold);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+table.simple .highlight { color: var(--gold); font-weight: 700; }
+
+.tag {
+  display: inline-block;
+  background: var(--maroon);
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-left: 6px;
+}
+
+ul.notice-list { margin: 0; padding-left: 20px; }
+ul.notice-list li { margin-bottom: 8px; font-size: 15.5px; }
+
+.footer-note {
+  text-align: center;
+  color: #6f6f74;
+  font-size: 12.5px;
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 640px) {
+  body { font-size: 18px; }
+  .brand-header h1 { font-size: 30px; }
+}
