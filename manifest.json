@@ -1,6 +1,6 @@
 {
-  "name": "Tainan City FC 出賽資訊 / Match Trip Info",
-  "short_name": "台南FC Trip",
+  "name": "AFC Group Stage",
+  "short_name": "AFC Group Stage",
   "description": "2026/27 AFC Challenge League 電子機票、行程與注意事項 / E-tickets, itinerary & travel notices",
   "start_url": "index.html",
   "scope": "./",
