@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>住宿飯店 Accommodation｜Tainan City FC</title>
+<meta name="theme-color" content="#170410">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-32.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="index.html">返回首頁 / Home</a>
+  <div class="page-title">住宿飯店<br>Accommodation</div>
+  <div class="page-sub">印尼・沙馬林達（Samarinda, Indonesia）</div>
+
+  <div class="card">
+    <h2>🏨 飯店資訊<br>Hotel Info</h2>
+    <div class="flight-row"><div class="flabel">飯店<br>Hotel</div><div class="fval">Swiss-Belhotel Borneo Samarinda</div></div>
+    <div class="flight-row"><div class="flabel">地址<br>Address</div><div class="fval" style="font-size:13.5px;">Jl. Mulawarman No.6, Pelabuhan, Kec. Samarinda Kota, Kota Samarinda, Kalimantan Timur 75122, Indonesia</div></div>
+
+    <p style="margin-top:16px;">
+      <a class="btn btn-secondary" href="https://maps.app.goo.gl/GSRoXJfpMhMB6rc69" target="_blank" rel="noopener">📍 飯店 Google 地圖<br><span style="font-size:13px;font-weight:400;color:var(--text-dim);">Hotel on Google Maps</span></a>
+      <a class="btn btn-secondary" href="https://maps.app.goo.gl/MwxF51UNwdtffKQk8" target="_blank" rel="noopener">⚽ 飯店到球場距離<br><span style="font-size:13px;font-weight:400;color:var(--text-dim);">Distance to Stadium</span></a>
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🛏️ 房間名單<br>Room Assignments</h2>
+    <div class="no-ticket-note">
+      房間名單尚未確定，確認後將補上。<br>Room assignments TBC — will be added once confirmed.
+    </div>
+  </div>
+
+  <div class="footer-note">Peggy整理｜2026-09-20</div>
+</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>

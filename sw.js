@@ -1,11 +1,12 @@
 // 版本號：每次更新內容時，改這個數字，讓使用者端快取失效並抓新版本
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const CACHE_NAME = 'tainan-fc-' + CACHE_VERSION;
 
 const CORE_ASSETS = [
   'index.html',
   'tickets.html',
   'itinerary.html',
+  'hotel.html',
   'notices.html',
   'styles.css',
   'roster.js',
