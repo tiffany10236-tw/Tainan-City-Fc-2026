@@ -36,7 +36,7 @@ a { color: var(--gold); }
 .brand-header {
   text-align: center;
   padding: 28px 16px 22px;
-  background: linear-gradient(180deg, var(--maroon) 0%, #4a1219 100%);
+  background: linear-gradient(180deg, var(--maroon-bright) 0%, var(--bg) 100%);
   border-bottom: 4px solid var(--gold);
 }
 .brand-header .badge {
