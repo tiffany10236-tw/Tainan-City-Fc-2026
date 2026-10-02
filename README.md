@@ -26,24 +26,31 @@
 
 - **要新增/修改某人的機票**：把新的 PDF 檔案放進 `tickets/` 資料夾（檔名用英文），
   並到 `roster.js` 裡把對應的人加上 `slug: "檔名（不含.pdf）"`
-- **要修改行程/賽程/注意事項文字**：直接編輯 `itinerary.html` 或 `notices.html`
+- **要修改行程/賽程/注意事項文字**：直接編輯 `flights.html`、`schedule.html` 或 `notices.html`
 - 改完後一樣用 GitHub 網頁介面重新上傳覆蓋檔案（Commit changes），
   成員端只要重新整理頁面就會看到最新內容
 
 ## 資料夾結構
 ```
-index.html         首頁
-tickets.html        機票查詢頁
-itinerary.html       行程與賽程頁
-notices.html        注意事項頁
-styles.css          共用樣式
-roster.js           球隊名單資料（在這裡對應姓名與機票檔名）
-manifest.json        PWA 設定
-sw.js               離線快取與自動更新機制
-tickets/            31 份機票 PDF
-icons/              App 圖示（4 種尺寸）
+index.html          首頁
+tickets.html         機票／簽證查詢頁
+flights.html         飛航行程頁（含接駁大巴、行李、電池規定）
+schedule.html         賽程頁
+hotel.html           住宿飯店頁
+arrival-card.html      印尼入境卡填寫教學頁
+notices.html          出國注意事項頁
+styles.css           共用樣式
+roster.js            球隊名單資料（姓名對應機票檔名 slug 與簽證檔名 visa_slug）
+manifest.json         PWA 設定
+sw.js                離線快取與自動更新機制
+tickets/             機票 PDF
+visas/               簽證 PDF
+images/              注意事項頁用圖片（轉接頭照片等）
+icons/               App 圖示（4 種尺寸）
 ```
 
-## 目前尚缺
+## 目前狀態
 - 32 位成員機票已全數到齊 ✅
-- 出發／返程接駁大巴的確切時間待補（目前顯示「待確認」）
+- 簽證目前收到 19 份，尚缺：蕭永福、簡佑昕、張國霖、陳俊達、劉和翰、蔡政儒、馮少祺、阿珞朴·古勵、戴亞成、洪士程、陳羿玄、葉境均、OPOKU（辦理中）
+  補齊後在 `roster.js` 把對應人員的 `visa_slug` 從 `null` 改成檔名即可
+- 出發／返程接駁大巴時間已更新（10/15 01:00 出發、10/26 08:30 回程）

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>賽程 Match Schedule｜Tainan City FC</title>
+<meta name="theme-color" content="#170410">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-32.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="index.html">返回首頁 / Home</a>
+  <div class="page-title">賽程<br>Match Schedule</div>
+  <div class="page-sub">2026/27 AFC Challenge League 小組賽（Group D）<br>Group Stage</div>
+
+  <div class="card">
+    <h2>⚽ 小組賽賽程<br>Group Stage Fixtures</h2>
+    <p style="font-size:14px;color:var(--text-dim);margin-top:-4px;">
+      主辦城市：印尼・沙馬林達｜球場：Segiri Stadium<br>
+      Host City: Samarinda, Indonesia ｜ Venue: Segiri Stadium
+    </p>
+    <table class="simple">
+      <tr><th>場次<br>MD</th><th>日期<br>Date</th><th>對戰<br>Match</th><th>開賽<br>Kick-off</th></tr>
+      <tr>
+        <td>MD1</td>
+        <td>10/18<br>Sun</td>
+        <td class="highlight">Tainan City FC<br><span style="font-size:12px;color:var(--text-dim);">vs One Taguig FC (PHI)</span></td>
+        <td>16:00</td>
+      </tr>
+      <tr>
+        <td>MD2</td>
+        <td>10/21<br>Wed</td>
+        <td class="highlight">Tainan City FC<br><span style="font-size:12px;color:var(--text-dim);">vs Borneo FC Samarinda (IDN)</span></td>
+        <td>20:00</td>
+      </tr>
+      <tr>
+        <td>MD3</td>
+        <td>10/24<br>Sat</td>
+        <td class="highlight">Tainan City FC<br><span style="font-size:12px;color:var(--text-dim);">vs Yangon United FC (MYA)</span></td>
+        <td>16:00</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📋 分組對戰表<br>Group D Standings</h2>
+    <table class="simple">
+      <tr><th>代碼<br>Code</th><th>球隊<br>Team</th></tr>
+      <tr><td>D1</td><td>Borneo FC Samarinda (IDN)</td></tr>
+      <tr><td>D2</td><td>One Taguig FC (PHI)</td></tr>
+      <tr><td>D3</td><td class="highlight">Tainan City FC (TPE)</td></tr>
+      <tr><td>D4</td><td>Yangon United FC (MYA)</td></tr>
+    </table>
+  </div>
+
+  <div class="footer-note">Peggy整理｜2026-09-20</div>
+</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>
