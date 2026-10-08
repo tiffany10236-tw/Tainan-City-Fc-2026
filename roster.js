@@ -21,7 +21,7 @@ const ROSTER = [
   { role: "隊員",     role_en: "Player",             name: "WILKER", slug: "wilker", visa_slug: "wilker" },
   { role: "隊員",     role_en: "Player",             name: "PORTO",  slug: "porto",  visa_slug: "porto" },
   { role: "隊員",     role_en: "Player",             name: "KEVIN",  slug: "kevin",  visa_slug: "kevin" },
-  { role: "隊員",     role_en: "Player",             name: "OPOKU",  slug: "opoku",  visa_slug: null },
+  { role: "隊員",     role_en: "Player",             name: "OPOKU",  slug: "opoku",  visa_slug: "opoku" },
   { role: "隊員",     role_en: "Player",             name: "劉和翰", slug: "liu-hohan",    visa_slug: "liu-hohan" },
   { role: "隊員",     role_en: "Player",             name: "蔡政儒", slug: "tsai-chengju", visa_slug: "tsai-chengju" },
   { role: "隊員",     role_en: "Player",             name: "潘文傑", slug: "pan-wenchieh", visa_slug: "pan-wenchieh" },
