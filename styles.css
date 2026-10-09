@@ -19,7 +19,7 @@ html, body {
   background: var(--bg);
   color: var(--text);
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.7;
   -webkit-text-size-adjust: 100%;
 }
@@ -40,7 +40,7 @@ a { color: var(--gold); }
   border-bottom: 4px solid var(--gold);
 }
 .brand-header .badge {
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 2px;
   color: var(--gold);
   text-transform: uppercase;
@@ -53,7 +53,7 @@ a { color: var(--gold); }
   letter-spacing: 1px;
 }
 .brand-header .sub {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text-dim);
 }
 
@@ -79,8 +79,8 @@ a { color: var(--gold); }
 }
 .nav-card:active { background: var(--bg-panel-2); }
 .nav-card .icon { font-size: 30px; flex-shrink: 0; }
-.nav-card .label { font-size: 19px; font-weight: 700; }
-.nav-card .desc { font-size: 14px; color: var(--text-dim); margin-top: 2px; }
+.nav-card .label { font-size: 21px; font-weight: 700; }
+.nav-card .desc { font-size: 16px; color: var(--text-dim); margin-top: 2px; }
 
 /* ---------- Section titles ---------- */
 .page-title {
@@ -89,14 +89,14 @@ a { color: var(--gold); }
   margin: 4px 0 4px;
   color: var(--gold);
 }
-.page-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 18px; }
+.page-sub { color: var(--text-dim); font-size: 16px; margin-bottom: 18px; }
 
 .back-link {
   display: inline-block;
   margin-bottom: 16px;
   color: var(--text-dim);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 17px;
 }
 .back-link:before { content: "← "; }
 
@@ -104,7 +104,7 @@ a { color: var(--gold); }
 .search-box {
   width: 100%;
   padding: 14px 14px;
-  font-size: 17px;
+  font-size: 18px;
   border-radius: 8px;
   border: 1px solid var(--line);
   background: var(--bg-panel);
@@ -129,8 +129,8 @@ a { color: var(--gold); }
   cursor: pointer;
 }
 .roster-item:active { background: var(--bg-panel-2); }
-.roster-item .name { font-size: 18px; font-weight: 700; }
-.roster-item .role { font-size: 13px; color: var(--gold); margin-bottom: 2px; }
+.roster-item .name { font-size: 19px; font-weight: 700; }
+.roster-item .role { font-size: 15px; color: var(--gold); margin-bottom: 2px; }
 .roster-item .arrow { color: var(--text-dim); font-size: 20px; }
 .roster-item.missing { opacity: 0.55; }
 .roster-item.missing .arrow { color: #8a8a8e; }
@@ -145,12 +145,12 @@ a { color: var(--gold); }
   margin-top: 6px;
 }
 .ticket-panel .name { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
-.ticket-panel .role { color: var(--gold); font-size: 14px; margin-bottom: 18px; }
+.ticket-panel .role { color: var(--gold); font-size: 16px; margin-bottom: 18px; }
 .btn {
   display: inline-block;
   width: 100%;
   padding: 16px 14px;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
   border-radius: 10px;
   border: none;
@@ -166,7 +166,7 @@ a { color: var(--gold); }
   color: #f0d79a;
   border-radius: 8px;
   padding: 14px;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 /* ---------- Tables ---------- */
@@ -178,7 +178,7 @@ a { color: var(--gold); }
   margin-bottom: 18px;
 }
 .card h2 {
-  font-size: 18px;
+  font-size: 19px;
   color: var(--gold);
   margin: 0 0 10px;
   border-bottom: 2px solid var(--line);
@@ -190,7 +190,7 @@ a { color: var(--gold); }
   gap: 10px;
   padding: 10px 0;
   border-bottom: 1px dashed var(--line);
-  font-size: 15px;
+  font-size: 17px;
 }
 .flight-row:last-child { border-bottom: none; }
 .flight-row .flabel { color: var(--text-dim); flex-shrink: 0; width: 92px; }
@@ -199,7 +199,7 @@ a { color: var(--gold); }
 table.simple {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14.5px;
+  font-size: 16px;
 }
 table.simple th, table.simple td {
   border-bottom: 1px solid var(--line);
@@ -208,7 +208,7 @@ table.simple th, table.simple td {
 }
 table.simple th {
   color: var(--gold);
-  font-size: 13px;
+  font-size: 15px;
   text-transform: uppercase;
 }
 table.simple .highlight { color: var(--gold); font-weight: 700; }
@@ -217,25 +217,29 @@ table.simple .highlight { color: var(--gold); font-weight: 700; }
   display: inline-block;
   background: var(--maroon);
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
   padding: 3px 9px;
   border-radius: 20px;
   margin-left: 6px;
 }
 
 ul.notice-list { margin: 0; padding-left: 20px; }
-ul.notice-list li { margin-bottom: 8px; font-size: 15.5px; }
+ul.notice-list li { margin-bottom: 8px; font-size: 17px; }
 
 .footer-note {
   text-align: center;
   color: #6f6f74;
-  font-size: 12.5px;
+  font-size: 14.5px;
   margin-top: 30px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
 }
 
 @media (min-width: 640px) {
-  body { font-size: 18px; }
+  body { font-size: 20px; }
   .brand-header h1 { font-size: 30px; }
 }
+
+/* 字體放大後的版面保護 */
+.card { overflow-x: auto; }
+table.simple th, table.simple td { word-break: break-word; }

@@ -61,7 +61,7 @@ function renderList(filter) {
     div.innerHTML = `
       <div>
         <div class="role">${p.role} / ${p.role_en}</div>
-        <div class="name">${p.name} <span style="font-size:14px;">${ticketMark} ${visaMark}</span></div>
+        <div class="name">${p.name} <span style="font-size:16px;">${ticketMark} ${visaMark}</span></div>
       </div>
       <div class="arrow">›</div>
     `;
@@ -78,8 +78,8 @@ function openTicket(idx) {
   const ticketActions = document.getElementById('tTicketActions');
   if (p.slug) {
     ticketActions.innerHTML = `
-      <a class="btn btn-primary" href="tickets/${p.slug}.pdf" target="_blank" rel="noopener">開啟電子機票 PDF<br><span style="font-size:14px;font-weight:400;">Open Ticket PDF</span></a>
-      <a class="btn btn-secondary" href="tickets/${p.slug}.pdf" download>下載到手機<br><span style="font-size:13px;font-weight:400;color:var(--text-dim);">Download</span></a>
+      <a class="btn btn-primary" href="tickets/${p.slug}.pdf" target="_blank" rel="noopener">開啟電子機票 PDF<br><span style="font-size:16px;font-weight:400;">Open Ticket PDF</span></a>
+      <a class="btn btn-secondary" href="tickets/${p.slug}.pdf" download>下載到手機<br><span style="font-size:15px;font-weight:400;color:var(--text-dim);">Download</span></a>
     `;
   } else {
     ticketActions.innerHTML = `<div class="no-ticket-note">目前尚未收到你的電子機票，請聯繫領隊。<br>Your e-ticket has not been received yet. Please contact the team manager.</div>`;
@@ -88,8 +88,8 @@ function openTicket(idx) {
   const visaActions = document.getElementById('tVisaActions');
   if (p.visa_slug) {
     visaActions.innerHTML = `
-      <a class="btn btn-primary" href="visas/${p.visa_slug}.pdf" target="_blank" rel="noopener">開啟簽證 PDF<br><span style="font-size:14px;font-weight:400;">Open Visa PDF</span></a>
-      <a class="btn btn-secondary" href="visas/${p.visa_slug}.pdf" download>下載到手機<br><span style="font-size:13px;font-weight:400;color:var(--text-dim);">Download</span></a>
+      <a class="btn btn-primary" href="visas/${p.visa_slug}.pdf" target="_blank" rel="noopener">開啟簽證 PDF<br><span style="font-size:16px;font-weight:400;">Open Visa PDF</span></a>
+      <a class="btn btn-secondary" href="visas/${p.visa_slug}.pdf" download>下載到手機<br><span style="font-size:15px;font-weight:400;color:var(--text-dim);">Download</span></a>
     `;
   } else {
     visaActions.innerHTML = `<div class="no-ticket-note">目前尚未收到你的簽證，請聯繫領隊。<br>Your visa has not been received yet. Please contact the team manager.</div>`;
