@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>電子機票／簽證查詢 E-Tickets &amp; Visa｜Tainan City FC</title>
+<title>機票／簽證／比賽門票 Tickets &amp; Visa｜Tainan City FC</title>
 <meta name="theme-color" content="#170410">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
@@ -15,8 +15,8 @@
   <a class="back-link" href="index.html">返回首頁 / Home</a>
 
   <div id="listView">
-    <div class="page-title">電子機票／簽證查詢<br>E-Tickets &amp; Visa</div>
-    <div class="page-sub">點選你的姓名，查看個人機票與簽證<br>Tap your name to view your e-ticket and visa</div>
+    <div class="page-title">機票／簽證／比賽門票查詢<br>Flight, Visa &amp; Match Tickets</div>
+    <div class="page-sub">點選你的姓名，查看個人機票、簽證與比賽門票<br>Tap your name to view your flight ticket, visa and match ticket</div>
 
     <input type="text" class="search-box" id="searchBox" placeholder="輸入姓名搜尋 / Search name…">
     <div class="roster-list" id="rosterList"></div>
@@ -36,6 +36,15 @@
     <div class="card">
       <h2>🛂 簽證 Visa</h2>
       <div id="tVisaActions"></div>
+    </div>
+
+    <div class="card">
+      <h2>⚽ 10/18 Borneo vs Yangon 20:00<br>Match E-Ticket</h2>
+      <p style="font-size:16px;color:var(--text-dim);margin-top:-4px;">
+        Borneo FC Samarinda v Yangon United FC｜Stadion Segiri<br>
+        18 Oct 2026 (Sun), Kick-off 20:00 WITA
+      </p>
+      <div id="tMatchActions"></div>
     </div>
 
     <p style="text-align:center; margin-top:4px;">
@@ -58,10 +67,11 @@ function renderList(filter) {
     div.className = 'roster-item' + (p.slug ? '' : ' missing');
     const ticketMark = p.slug ? '🎫' : '';
     const visaMark = p.visa_slug ? '🛂' : '';
+    const matchMark = p.match_slug ? '⚽' : '';
     div.innerHTML = `
       <div>
         <div class="role">${p.role} / ${p.role_en}</div>
-        <div class="name">${p.name} <span style="font-size:16px;">${ticketMark} ${visaMark}</span></div>
+        <div class="name">${p.name} <span style="font-size:16px;">${ticketMark} ${visaMark} ${matchMark}</span></div>
       </div>
       <div class="arrow">›</div>
     `;
@@ -93,6 +103,16 @@ function openTicket(idx) {
     `;
   } else {
     visaActions.innerHTML = `<div class="no-ticket-note">目前尚未收到你的簽證，請聯繫領隊。<br>Your visa has not been received yet. Please contact the team manager.</div>`;
+  }
+
+  const matchActions = document.getElementById('tMatchActions');
+  if (p.match_slug) {
+    matchActions.innerHTML = `
+      <a class="btn btn-primary" href="match-tickets/${p.match_slug}.pdf" target="_blank" rel="noopener">開啟比賽門票 PDF<br><span style="font-size:16px;font-weight:400;">Open Match Ticket PDF</span></a>
+      <a class="btn btn-secondary" href="match-tickets/${p.match_slug}.pdf" download>下載到手機<br><span style="font-size:15px;font-weight:400;color:var(--text-dim);">Download</span></a>
+    `;
+  } else {
+    matchActions.innerHTML = `<div class="no-ticket-note">目前尚未收到你的比賽門票，請聯繫領隊。<br>Your match ticket has not been received yet. Please contact the team manager.</div>`;
   }
 
   document.getElementById('listView').style.display = 'none';
