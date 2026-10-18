@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>機票／簽證／比賽門票 Tickets &amp; Visa｜Tainan City FC</title>
+<meta name="theme-color" content="#170410">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-32.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="index.html">返回首頁 / Home</a>
+
+  <div id="listView">
+    <div class="page-title">機票／簽證／比賽門票查詢<br>Flight, Visa &amp; Match Tickets</div>
+    <div class="page-sub">點選你的姓名，查看個人機票、簽證與比賽門票<br>Tap your name to view your flight ticket, visa and match ticket</div>
+
+    <input type="text" class="search-box" id="searchBox" placeholder="輸入姓名搜尋 / Search name…">
+    <div class="roster-list" id="rosterList"></div>
+  </div>
+
+  <div id="ticketView" style="display:none;">
+    <div class="ticket-panel">
+      <div class="role" id="tRole"></div>
+      <div class="name" id="tName"></div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h2>🎫 電子機票 E-Ticket</h2>
+      <div id="tTicketActions"></div>
+    </div>
+
+    <div class="card">
+      <h2>🛂 簽證 Visa</h2>
+      <div id="tVisaActions"></div>
+    </div>
+
+    <div class="card">
+      <h2>⚽ 10/18 Borneo vs Yangon 20:00<br>Match E-Ticket</h2>
+      <p style="font-size:16px;color:var(--text-dim);margin-top:-4px;">
+        Borneo FC Samarinda v Yangon United FC｜Stadion Segiri<br>
+        18 Oct 2026 (Sun), Kick-off 20:00 WITA
+      </p>
+      <div id="tMatchActions"></div>
+    </div>
+
+    <p style="text-align:center; margin-top:4px;">
+      <a href="#" class="back-link" onclick="showList(); return false;">返回名單 / Back to list</a>
+    </p>
+  </div>
+
+  <div class="footer-note">Peggy整理｜2026-09-20</div>
+</div>
+
+<script src="roster.js"></script>
+<script>
+function renderList(filter) {
+  const wrap = document.getElementById('rosterList');
+  wrap.innerHTML = '';
+  const f = (filter || '').trim().toLowerCase();
+  ROSTER.forEach((p, idx) => {
+    if (f && !p.name.toLowerCase().includes(f)) return;
+    const div = document.createElement('div');
+    div.className = 'roster-item' + (p.slug ? '' : ' missing');
+    const ticketMark = p.slug ? '🎫' : '';
+    const visaMark = p.visa_slug ? '🛂' : '';
+    const matchMark = p.match_slug ? '⚽' : '';
+    div.innerHTML = `
+      <div>
+        <div class="role">${p.role} / ${p.role_en}</div>
+        <div class="name">${p.name} <span style="font-size:16px;">${ticketMark} ${visaMark} ${matchMark}</span></div>
+      </div>
+      <div class="arrow">›</div>
+    `;
+    div.onclick = () => openTicket(idx);
+    wrap.appendChild(div);
+  });
+}
+
+function openTicket(idx) {
+  const p = ROSTER[idx];
+  document.getElementById('tRole').textContent = p.role + ' / ' + p.role_en;
+  document.getElementById('tName').textContent = p.name;
+
+  const ticketActions = document.getElementById('tTicketActions');
+  if (p.slug) {
+    ticketActions.innerHTML = `
+      <a class="btn btn-primary" href="tickets/${p.slug}.pdf" target="_blank" rel="noopener">開啟電子機票 PDF<br><span style="font-size:16px;font-weight:400;">Open Ticket PDF</span></a>
+      <a class="btn btn-secondary" href="tickets/${p.slug}.pdf" download>下載到手機<br><span style="font-size:15px;font-weight:400;color:var(--text-dim);">Download</span></a>
+    `;
+  } else {
+    ticketActions.innerHTML = `<div class="no-ticket-note">目前尚未收到你的電子機票，請聯繫領隊。<br>Your e-ticket has not been received yet. Please contact the team manager.</div>`;
+  }
+
+  const visaActions = document.getElementById('tVisaActions');
+  if (p.visa_slug) {
+    visaActions.innerHTML = `
+      <a class="btn btn-primary" href="visas/${p.visa_slug}.pdf" target="_blank" rel="noopener">開啟簽證 PDF<br><span style="font-size:16px;font-weight:400;">Open Visa PDF</span></a>
+      <a class="btn btn-secondary" href="visas/${p.visa_slug}.pdf" download>下載到手機<br><span style="font-size:15px;font-weight:400;color:var(--text-dim);">Download</span></a>
+    `;
+  } else {
+    visaActions.innerHTML = `<div class="no-ticket-note">目前尚未收到你的簽證，請聯繫領隊。<br>Your visa has not been received yet. Please contact the team manager.</div>`;
+  }
+
+  const matchActions = document.getElementById('tMatchActions');
+  if (p.match_slug) {
+    matchActions.innerHTML = `
+      <a class="btn btn-primary" href="match-tickets/${p.match_slug}.pdf" target="_blank" rel="noopener">開啟比賽門票 PDF<br><span style="font-size:16px;font-weight:400;">Open Match Ticket PDF</span></a>
+      <a class="btn btn-secondary" href="match-tickets/${p.match_slug}.pdf" download>下載到手機<br><span style="font-size:15px;font-weight:400;color:var(--text-dim);">Download</span></a>
+    `;
+  } else {
+    matchActions.innerHTML = `<div class="no-ticket-note">目前尚未收到你的比賽門票，請聯繫領隊。<br>Your match ticket has not been received yet. Please contact the team manager.</div>`;
+  }
+
+  document.getElementById('listView').style.display = 'none';
+  document.getElementById('ticketView').style.display = 'block';
+  window.scrollTo(0,0);
+}
+
+function showList() {
+  document.getElementById('ticketView').style.display = 'none';
+  document.getElementById('listView').style.display = 'block';
+}
+
+document.getElementById('searchBox').addEventListener('input', (e) => renderList(e.target.value));
+renderList('');
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>
